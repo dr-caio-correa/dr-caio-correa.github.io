@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Name — Portfolio</title>
+    <meta name="description" content="Portfolio of Your Name — data science, analytics, and dashboards." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="container">
+      <nav class="nav">
+        <a class="logo" href="#">Your Name</a>
+        <div class="navlinks">
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#about">About</a>
+          <a class="button" href="https://github.com/your-username" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <h1>Data science + analytics for real operations.</h1>
+        <p class="sub">
+          I build forecasting, segmentation, and text analytics pipelines — and ship them as dashboards and reproducible code.
+        </p>
+
+        <div class="cta">
+          <a class="button" href="#projects">View projects</a>
+          <a class="button ghost" href="mailto:you@email.com">Contact</a>
+          <a class="link" href="https://www.linkedin.com/in/your-link/" target="_blank" rel="noreferrer">LinkedIn →</a>
+        </div>
+
+        <div class="badges">
+          <span class="badge">Python</span>
+          <span class="badge">SQL</span>
+          <span class="badge">Power BI</span>
+          <span class="badge">ML (RF / XGBoost)</span>
+          <span class="badge">NLP / CSAT</span>
+        </div>
+      </section>
+    </header>
+
+    <main class="container">
+      <section id="projects" class="section">
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>Selected work with clear problem statements, methods, and results.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="card-head">
+              <h3>Wait Time Forecasting (Demand–Capacity)</h3>
+              <p class="meta">Random Forest / XGBoost • Aggregated daily signals</p>
+            </div>
+            <p>
+              Predicts p80 wait time using transaction volumes and operational context (no staffing data), highlighting nonlinear demand–capacity dynamics.
+            </p>
+            <div class="card-actions">
+              <a class="button small" href="https://github.com/your-username/wait-times-prediction" target="_blank" rel="noreferrer">Repo</a>
+              <a class="button small ghost" href="#" target="_blank" rel="noreferrer">Write-up</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3>CSAT Text Analytics Taxonomy</h3>
+              <p class="meta">NLP • Rules + model-assisted classification</p>
+            </div>
+            <p>
+              Classifies open-ended feedback into actionable themes (service quality, accessibility, tech experience) with sentiment flags for dashboarding.
+            </p>
+            <div class="card-actions">
+              <a class="button small" href="https://github.com/your-username/csat-text-analytics" target="_blank" rel="noreferrer">Repo</a>
+              <a class="button small ghost" href="#" target="_blank" rel="noreferrer">Demo</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3>Disease Risk Calculator (DSV)</h3>
+              <p class="meta">Forecast data • Decision support</p>
+            </div>
+            <p>
+              Computes late blight risk scores from temperature and relative humidity to support scouting and prevention decisions.
+            </p>
+            <div class="card-actions">
+              <a class="button small" href="https://github.com/your-username/dsv-calculator" target="_blank" rel="noreferrer">Repo</a>
+              <a class="button small ghost" href="#" target="_blank" rel="noreferrer">Notes</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>Tools I use to go from messy data → decisions.</p>
+        </div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Data</h3>
+            <ul>
+              <li>Python (pandas, scikit-learn), R (tidyverse)</li>
+              <li>SQL (analytics queries, modeling)</li>
+              <li>Power BI (DAX, Power Query, semantic models)</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Methods</h3>
+            <ul>
+              <li>Forecasting & scenario analysis</li>
+              <li>Tree-based ML (RF, XGBoost), target encoding</li>
+              <li>NLP for survey feedback (taxonomy + sentiment)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-title">
+          <h2>About</h2>
+          <p>Short, specific, and relevant.</p>
+        </div>
+        <div class="panel">
+          <p>
+            I’m a data scientist with a background in applied biology and operations-focused analytics. I like problems where
+            outcomes depend on constraints (capacity, process design, demand spikes) and where explainability matters for decisions.
+          </p>
+          <div class="about-actions">
+            <a class="button" href="mailto:you@email.com">Email</a>
+            <a class="button ghost" href="https://www.linkedin.com/in/your-link/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="button ghost" href="https://github.com/your-username" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>© <span id="year"></span> Your Name • Built with GitHub Pages</p>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
