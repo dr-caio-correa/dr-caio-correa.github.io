@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article class="page">
+  <div class="page-head">
+    <h2>{{ page.title }}</h2>
+    {% if page.subtitle %}<p class="muted">{{ page.subtitle }}</p>{% endif %}
+    <div class="pillrow">
+      {% for tag in page.tags %}
+        <span class="pill">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% if page.repo %}
+      <p class="links">
+        <a class="btn" href="{{ page.repo }}" target="_blank" rel="noreferrer">View repo</a>
+        {% if page.demo %}<a class="btn ghost" href="{{ page.demo }}" target="_blank" rel="noreferrer">Demo</a>{% endif %}
+      </p>
+    {% endif %}
+  </div>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>
