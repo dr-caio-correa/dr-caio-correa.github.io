@@ -1,0 +1,17 @@
+title: "Caio Correa"
+description: "Portfolio — Data Science, Analytics, Plant Health"
+url: "https://dr-caio-correa.github.io"
+
+theme: null
+markdown: kramdown
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
