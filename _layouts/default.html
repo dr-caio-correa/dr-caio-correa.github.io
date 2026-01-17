@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{ page.title }} · {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+  </head>
+
+  <body>
+    <header class="banner">
+      <div class="wrap">
+        <div class="banner-top">
+          <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+          <nav class="nav">
+            <a href="{{ '/' | relative_url }}#projects">Projects</a>
+            <a href="{{ '/about' | relative_url }}">About</a>
+            <a href="https://github.com/dr-caio-correa" target="_blank" rel="noreferrer">GitHub</a>
+          </nav>
+        </div>
+
+        <div class="banner-hero">
+          <h1>{{ site.title }}</h1>
+          <p class="muted">{{ site.description }}</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      {{ content }}
+      <footer class="footer">
+        <span>© {{ "now" | date: "%Y" }} {{ site.title }}</span>
+      </footer>
+    </main>
+  </body>
+</html>
