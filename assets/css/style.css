@@ -39,11 +39,10 @@ body{
 }
 .brand{
   font-family: "Inter", sans-serif;
-  font-weight:500;
-  letter-spacing: 0.02em;
+  font-weight:300;
   text-decoration:none;
-  color:var(--text);
   font-size:18px;
+  color:#6b7280;
 }
 .nav{display:flex; gap:16px; flex-wrap:wrap}
 .nav a{
