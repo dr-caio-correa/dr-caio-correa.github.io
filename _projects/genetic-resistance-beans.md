@@ -5,6 +5,7 @@ subtitle: Disease resistance analytics for breeding trials
 repo: https://github.com/dr-caio-correa/genetic-resistance-beans
 tags: [Genetics, Statistics, Plant Health]
 order: 3
+image: /assets/img/beans.jpg
 ---
 
 ## Goal
