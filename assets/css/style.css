@@ -13,20 +13,13 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
+
 body{
   margin:0;
   font-family:var(--font);
   color:var(--text);
-
-background:
-    linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15)),
-    url("../img/hero-bg.jpg");
-  background-size: cover;
-  background-position: center top;
-  background-attachment: fixed;
-  background-color:#eef1f8;
+  background:#ffffff; /* image is ONLY in the hero */
 }
-
 
 /* Layout wrapper */
 .wrap{max-width:var(--max); margin:0 auto; padding: 18px 18px}
@@ -59,37 +52,40 @@ background:
 }
 .nav a:hover{color:var(--text)}
 
-/* Blue banner */
+/* Hero (image only here) */
 .hero{
   position:relative;
   overflow:hidden;
-  background: transparent;
+  background-image: url("../img/hero-bg.jpg");
+  background-size: cover;
+  background-position: center top;
 }
 
-/* minimalist pattern on the blue banner */
+/* blue tint overlay */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:
-    linear-gradient(
-      rgba(81,92,142,.85),
-      rgba(81,92,142,.85)
-    );
+  background: rgba(81,92,142,.82); /* #515c8e tint */
   z-index:0;
-  backdrop-filter: blur(2px);
 }
 
+/* subtle dot pattern + soft highlight */
 .hero::after{
   content:"";
   position:absolute;
   inset:0;
-  background: radial-gradient(900px 320px at 10% 20%, rgba(255,255,255,.20), transparent 60%);
-  opacity:.6;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,.18) 1px, transparent 1.8px),
+    radial-gradient(900px 320px at 10% 20%, rgba(255,255,255,.22), transparent 60%);
+  background-size: 22px 22px, auto;
+  opacity:.65;
+  z-index:0;
 }
 
 .hero-inner{
   position:relative;
+  z-index:1;
   padding-top:34px;
   padding-bottom:34px;
 }
@@ -106,14 +102,11 @@ background:
   font-size: clamp(16px, 1.8vw, 22px);
 }
 
-/* White content area with a soft tint */
+/* White content area (solid white) */
 .content{
   padding-top: 22px;
   padding-bottom: 30px;
-  background:
-    radial-gradient(900px 360px at 10% 0%, rgba(81,92,142,.07), transparent 55%),
-    radial-gradient(900px 360px at 90% 0%, rgba(81,92,142,.05), transparent 60%),
-    #fff;
+  background:#fff;
 }
 
 /* Sections */
@@ -307,4 +300,3 @@ a:focus-visible{
   background: rgba(81,92,142,.14);
 }
 .contact-btn:active{transform: translateY(1px)}
-
