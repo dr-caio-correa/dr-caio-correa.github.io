@@ -21,17 +21,24 @@ description: Portfolio — projects and background
 <section class="section" id="projects">
   <h2>Projects</h2>
 
-  <div class="grid">
-    {% assign items = site.projects | sort: "order" %}
-    {% for p in items %}
-      <div class="card">
-        <h3>{{ p.title }}</h3>
-        <p>{{ p.subtitle }}</p>
-        <div class="row">
-          <a class="btn" href="{{ p.url | relative_url }}">Read more</a>
-          <a class="btn ghost" href="{{ p.repo }}" target="_blank" rel="noreferrer">Repo</a>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
+  {% if site.projects and site.projects.size > 0 %}
+    <div class="grid">
+      {% assign items = site.projects | sort: "order" %}
+      {% for p in items %}
+        <a class="pcard" href="{{ p.url | relative_url }}">
+          <img src="{{ p.image | relative_url }}" alt="{{ p.title }} thumbnail">
+          <div class="overlay">
+            <div class="meta">{{ p.tags | join: " · " }}</div>
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.subtitle }}</p>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="card">
+      <p class="muted">No projects found yet.</p>
+    </div>
+  {% endif %}
 </section>
+
