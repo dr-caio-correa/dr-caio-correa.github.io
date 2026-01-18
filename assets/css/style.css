@@ -39,9 +39,11 @@ body{
 }
 .brand{
   font-family: "Inter", sans-serif;
-  font-weight:300;
+  font-optical-sizing: auto;
+  font-weight:400;
+  font-style: normal;
   text-decoration:none;
-  font-size:18px;
+  font-size:16px;
   color:#6b7280;
 }
 .nav{display:flex; gap:16px; flex-wrap:wrap}
