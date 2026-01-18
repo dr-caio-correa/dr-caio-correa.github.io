@@ -38,8 +38,9 @@ body{
   padding-bottom:14px;
 }
 .brand{
-  font-weight:800;
-  letter-spacing:.2px;
+  font-family: "Inter", sans-serif;
+  font-weight:200;
+  letter-spacing:.6px;
   text-decoration:none;
   color:var(--text);
   font-size:18px;
