@@ -17,8 +17,22 @@ body{
   margin:0;
   font-family:var(--font);
   color:var(--text);
-  background: var(--bg);
+
+  /* Global background image */
+  background:
+    linear-gradient(
+      rgba(255,255,255,.15),
+      rgba(255,255,255,.15)
+    ),
+    url("/assets/img/hero-bg.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+
+  /* fallback color */
+  background-color:#eef1f8;
 }
+
 
 /* Layout wrapper */
 .wrap{max-width:var(--max); margin:0 auto; padding: 18px 18px}
