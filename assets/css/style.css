@@ -67,9 +67,9 @@ body{
 
 /* Blue banner */
 .hero{
-  background: var(--blue);
   position:relative;
   overflow:hidden;
+  background: transparent;
 }
 
 /* minimalist pattern on the blue banner */
@@ -78,10 +78,13 @@ body{
   position:absolute;
   inset:0;
   background:
-    radial-gradient(circle at 1px 1px, rgba(255,255,255,.22) 1px, transparent 1.6px);
-  background-size: 22px 22px;
-  opacity:.35;
+    linear-gradient(
+      rgba(81,92,142,.85),
+      rgba(81,92,142,.85)
+    );
+  z-index:0;
 }
+
 .hero::after{
   content:"";
   position:absolute;
