@@ -1,14 +1,16 @@
 :root{
-  --bg: #fbfbfd;
-  --card: rgba(255,255,255,.85);
-  --text: #0f172a;
-  --muted: #475569;
-  --border: rgba(15,23,42,.10);
-  --shadow: 0 10px 30px rgba(2,6,23,.08);
+  --bg0:#070b14;
+  --bg1:#0a1224;
+  --panel: rgba(255,255,255,.06);
+  --panel2: rgba(255,255,255,.08);
+  --text:#eaf0ff;
+  --muted: rgba(234,240,255,.72);
+  --border: rgba(255,255,255,.10);
+  --shadow: 0 18px 50px rgba(0,0,0,.45);
   --radius: 18px;
-  --max: 1040px;
-  --accent: #2563eb;
-  --accent2: #16a34a;
+  --max: 1080px;
+  --accent:#7aa7ff;
+  --accent2:#54f2c8;
   --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }
 
@@ -19,17 +21,32 @@ body{
   font-family:var(--font);
   color:var(--text);
   background:
-    radial-gradient(900px 500px at 10% 0%, rgba(37,99,235,.10), transparent 55%),
-    radial-gradient(900px 500px at 90% 10%, rgba(22,163,74,.08), transparent 55%),
-    repeating-linear-gradient(45deg, rgba(15,23,42,.03) 0, rgba(15,23,42,.03) 2px, transparent 2px, transparent 12px),
-    var(--bg);
+    radial-gradient(1000px 600px at 12% -10%, rgba(122,167,255,.18), transparent 55%),
+    radial-gradient(900px 520px at 90% 0%, rgba(84,242,200,.12), transparent 60%),
+    radial-gradient(900px 520px at 70% 120%, rgba(122,167,255,.10), transparent 60%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+  overflow-x:hidden;
 }
 
-.wrap{max-width:var(--max); margin:0 auto; padding: 24px 18px}
+/* subtle pattern overlay */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,.09) 1px, transparent 1.5px);
+  background-size: 28px 28px;
+  opacity:.22;
+  mix-blend-mode: overlay;
+}
 
+.wrap{max-width:var(--max); margin:0 auto; padding: 26px 18px}
+
+/* Banner / header */
 .banner{
-  border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.55));
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
   backdrop-filter: blur(10px);
 }
 .banner-top{
@@ -37,7 +54,7 @@ body{
   gap:14px;
 }
 .brand{
-  font-weight:800;
+  font-weight:850;
   letter-spacing:.2px;
   text-decoration:none;
   color:var(--text);
@@ -49,16 +66,21 @@ body{
   font-size:14px;
 }
 .nav a:hover{color:var(--text)}
-.banner-hero{padding: 20px 0 10px}
-.banner-hero h1{margin: 10px 0 6px; font-size: 34px; line-height:1.1}
+.banner-hero{padding: 18px 0 8px}
+.banner-hero h1{
+  margin: 10px 0 6px;
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height:1.1;
+}
 .muted{color:var(--muted); margin:0}
 
+/* Sections + cards */
 .section{padding: 22px 0}
 .section h2{margin:0 0 10px; font-size: 20px}
 
 .card{
   border: 1px solid var(--border);
-  background: var(--card);
+  background: linear-gradient(180deg, var(--panel2), var(--panel));
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 16px;
@@ -70,57 +92,109 @@ body{
   gap: 14px;
 }
 
-@media (min-width: 880px){
+@media (min-width: 900px){
   .grid{grid-template-columns: repeat(3, 1fr);}
 }
 
-.card h3{margin:0 0 6px; font-size:16px}
-.card p{margin:0 0 12px; color:var(--muted)}
-.card .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
-
-.btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding: 9px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(37,99,235,.22);
-  background: rgba(37,99,235,.10);
-  color: var(--text);
+/* Project card with image */
+.pcard{
+  position:relative;
+  display:block;
+  border-radius: var(--radius);
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  box-shadow: var(--shadow);
   text-decoration:none;
-  font-weight:700;
-  font-size: 13px;
-}
-.btn:hover{border-color: rgba(37,99,235,.45); background: rgba(37,99,235,.14)}
-.btn.ghost{
-  border-color: var(--border);
-  background: rgba(255,255,255,.55);
-}
-
-.pillrow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
-.pill{
-  font-size: 12px;
-  padding: 6px 10px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: rgba(255,255,255,.7);
-}
-
-.page{margin-top: 6px}
-.page-head{margin-bottom: 12px}
-.page-head h2{margin: 0 0 6px; font-size: 26px}
-.links{margin: 12px 0 0}
-
-.prose{
-  border-top: 1px solid var(--border);
-  padding-top: 14px;
   color: var(--text);
+  min-height: 220px;
+  transform: translateZ(0);
 }
-.prose p, .prose li{color: var(--muted)}
-.prose a{color: var(--accent); text-decoration:none}
-.prose a:hover{text-decoration:underline}
+.pcard img{
+  width:100%;
+  height: 250px;
+  object-fit: cover;
+  display:block;
+  filter: saturate(1.05) contrast(1.05);
+  transform: scale(1.01);
+  transition: transform .35s ease, filter .35s ease;
+}
+.pcard::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.55) 70%, rgba(0,0,0,.68) 100%);
+  opacity:.85;
+  transition: opacity .35s ease;
+}
+.pcard .overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding: 16px;
+  gap:6px;
+  z-index:1;
+}
+.pcard h3{
+  margin:0;
+  font-size: 16px;
+  letter-spacing:.2px;
+}
+.pcard p{
+  margin:0;
+  color: rgba(234,240,255,.78);
+  font-size: 13px;
+  line-height:1.35;
+  max-height: 0;
+  overflow:hidden;
+  transition: max-height .35s ease;
+}
+.pcard .meta{
+  font-size:12px;
+  color: rgba(234,240,255,.68);
+}
+.pcard:hover img{
+  transform: scale(1.06);
+  filter: saturate(1.1) contrast(1.08);
+}
+.pcard:hover::after{opacity:.72}
+.pcard:hover p{max-height: 90px}
+
+/* Make focus visible (keyboard nav) */
+.pcard:focus-visible,
+a:focus-visible{
+  outline: 2px solid rgba(122,167,255,.75);
+  outline-offset: 3px;
+  border-radius: 14px;
+}
 
 .footer{
   margin-top: 34px;
   padding: 18px 0;
-  color: var(--muted);
+  color: rgba(234,240,255,.6);
   font-size: 13px;
 }
+
+/* Prose on project pages */
+.page{margin-top: 6px}
+.page-head{margin-bottom: 12px}
+.page-head h2{margin: 0 0 6px; font-size: 28px}
+.pillrow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+.pill{
+  font-size: 12px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  color: rgba(234,240,255,.85);
+}
+.prose{
+  border-top: 1px solid rgba(255,255,255,.10);
+  padding-top: 14px;
+}
+.prose p, .prose li{color: rgba(234,240,255,.78)}
+.prose a{color: var(--accent); text-decoration:none}
+.prose a:hover{text-decoration:underline}
