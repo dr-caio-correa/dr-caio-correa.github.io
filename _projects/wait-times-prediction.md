@@ -5,6 +5,7 @@ subtitle: Predicting wait times from demand + operational context
 repo: https://github.com/dr-caio-correa/wait-times-prediction
 tags: [Python, Machine Learning, Operations]
 order: 2
+image: /assets/img/wait-times.jpg
 ---
 
 ## Problem
