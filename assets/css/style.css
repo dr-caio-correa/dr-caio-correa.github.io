@@ -39,7 +39,7 @@ body{
 }
 .brand{
   font-family: "Inter", sans-serif;
-  font-weight:200;
+  font-weight:500;
   letter-spacing:.6px;
   text-decoration:none;
   color:var(--text);
