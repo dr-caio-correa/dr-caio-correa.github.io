@@ -4,6 +4,7 @@ title: Pest Forecasting
 subtitle: Disease risk forecasting and decision support
 repo: https://github.com/dr-caio-correa/pest-forecasting
 tags: [Python, Forecasting, Decision Support]
+image: /assets/img/pest-forecasting.jpg
 order: 1
 ---
 
