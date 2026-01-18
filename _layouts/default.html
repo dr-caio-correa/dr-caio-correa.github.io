@@ -9,28 +9,31 @@
   </head>
 
   <body>
-    <header class="banner">
-      <div class="wrap">
-        <div class="banner-top">
-          <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-          <nav class="nav">
-            <a href="{{ '/' | relative_url }}#projects">Projects</a>
-            <a href="{{ '/about' | relative_url }}">About</a>
-            <a href="https://github.com/dr-caio-correa" target="_blank" rel="noreferrer">GitHub</a>
-          </nav>
-        </div>
-
-        <div class="banner-hero">
-          <h1>{{ site.title }}</h1>
-          <p class="muted">{{ site.description }}</p>
-        </div>
+    <!-- Top white strip -->
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <a class="brand" href="{{ '/' | relative_url }}">Caio Correa Analytics</a>
+        <nav class="nav">
+          <a href="{{ '/' | relative_url }}#projects">Projects</a>
+          <a href="{{ '/about' | relative_url }}">About</a>
+          <a href="https://github.com/dr-caio-correa" target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
       </div>
     </header>
 
-    <main class="wrap">
+    <!-- Blue banner -->
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <h1 class="hero-title">Caio Correa</h1>
+        <p class="hero-sub">Data Science and Analytics</p>
+      </div>
+    </section>
+
+    <!-- Main content (white) -->
+    <main class="wrap content">
       {{ content }}
       <footer class="footer">
-        <span>© {{ "now" | date: "%Y" }} {{ site.title }}</span>
+        <span>© {{ "now" | date: "%Y" }} Caio Correa</span>
       </footer>
     </main>
   </body>
