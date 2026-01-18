@@ -66,28 +66,20 @@ body{
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(81,92,142,.82); /* #515c8e tint */
+  background: rgba(0,0,0,.55); /* #515c8e tint */
   z-index:0;
 }
 
 /* subtle dot pattern + soft highlight */
 .hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 1px 1px, rgba(255,255,255,.18) 1px, transparent 1.8px),
-    radial-gradient(900px 320px at 10% 20%, rgba(255,255,255,.22), transparent 60%);
-  background-size: 22px 22px, auto;
-  opacity:.65;
-  z-index:0;
+  content:none;
 }
 
 .hero-inner{
   position:relative;
   z-index:1;
-  padding-top:34px;
-  padding-bottom:34px;
+  padding-top:50px;
+  padding-bottom:50px;
 }
 .hero-title{
   margin:0;
